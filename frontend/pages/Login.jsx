@@ -17,17 +17,22 @@ export default function Login() {
     e.preventDefault();
     setError("");
     setLoading(true);
+    console.log('Authentication started')
     try {
       if (isRegister) {
         // perform registration then log the user in using the returned token/user
+        console.log('Register process')
         const res = await axios.post("/api/auth/register", { name, email, password });
+        console.log('Login process')
         await login(res.data);
         navigate("/");
       } else {
+        console.log('Register process')
         await login(email, password, false);
         navigate("/");
       }
     } catch (err) {
+      console.log(err)
       setError(err.response?.data?.message || "Login failed");
     } finally {
       setLoading(false);
