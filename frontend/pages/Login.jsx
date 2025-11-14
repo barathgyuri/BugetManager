@@ -29,6 +29,7 @@ export default function Login() {
       } else {
         console.log('Login process')
         await login(email, password, false);
+        console.log('Login completed, call navigate')
         navigate("/");
       }
     } catch (err) {
