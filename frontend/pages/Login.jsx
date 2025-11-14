@@ -24,13 +24,12 @@ export default function Login() {
         console.log('Register process')
         const res = await axios.post("/api/auth/register", { name, email, password });
         console.log('Login process')
-        const data = await login(res.data);
-        // navigate only when the server returned a token (prevents race with ProtectedRoute)
-        if (data?.token) navigate("/");
+        await login(res.data);
+        navigate("/");
       } else {
         console.log('Login process')
-        const data = await login(email, password, false);
-        if (data?.token) navigate("/");
+        await login(email, password, false);
+        navigate("/");
       }
     } catch (err) {
       console.log(err)
