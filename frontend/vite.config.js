@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://bugetmanager.onrender.com/:5000',
+        target: 'https://bugetmanager.onrender.com/',
         changeOrigin: true,
         secure: false,
       }

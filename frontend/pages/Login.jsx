@@ -27,7 +27,7 @@ export default function Login() {
         await login(res.data);
         navigate("/");
       } else {
-        console.log('Register process')
+        console.log('Login process')
         await login(email, password, false);
         navigate("/");
       }
