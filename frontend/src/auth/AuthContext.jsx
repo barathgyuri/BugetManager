@@ -47,6 +47,8 @@ export function AuthProvider({ children }) {
   //    function that performs the network request for login or register
   const login = async (...args) => {
     // Case 1: passed an object with token and user
+    console.log("auth context");
+    
     if (args.length === 1 && args[0] && typeof args[0] === "object" && args[0].token) {
       const { token, user } = args[0];
       setToken(token);
