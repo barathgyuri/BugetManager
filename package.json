@@ -2,13 +2,18 @@
   "name": "bugetmanager",
   "version": "1.0.0",
   "description": "\"# Budgetanager\"",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "nodemon backend/server.js",
     "start": "node backend/server.js",
-    "build": "npm install && npm build --prefix frontend && npm run build --prefix backend"
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^7.0.0",
+    "mongoose": "^8.19.3"
+  }
 }
