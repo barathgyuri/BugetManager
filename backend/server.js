@@ -7,11 +7,18 @@ import expenseRoutes from "./routes/expenses.js";
 import incomeRoutes from "./routes/incomes.js";
 import analyticsRoutes from "./routes/analytics.js";
 import { authMiddleware } from "./middleware/auth.js";
+import path from "path";
 
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
+app.get('*',(req,res)=>{
+  res.sendFile(path.join(__dirname,"frontend","index.html"));
+})
 
 // Mongoose configuration
 // Starting with Mongoose 6+, the default parser and topology options are used and
