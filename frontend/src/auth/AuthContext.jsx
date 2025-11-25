@@ -53,6 +53,7 @@ export function AuthProvider({ children }) {
       const { token, user } = args[0];
       setToken(token);
       setUser(user);
+      console.log("1")
       return { token, user };
     }
 
@@ -67,11 +68,14 @@ export function AuthProvider({ children }) {
         setToken(data.token);
         setUser(data.user);
       }
+      console.log("2")
       return data;
     } catch (err) {
       // rethrow so calling components can handle the error
+      console.log("3")
       throw err;
     }
+      console.log("4")
   };
   const logout = () => {
     setToken(null);
