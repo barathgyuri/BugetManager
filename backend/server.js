@@ -86,7 +86,7 @@ app.use("/api/expenses", authMiddleware, expenseRoutes);
 app.use("/api/incomes",  authMiddleware, incomeRoutes);
 app.use("/api/analytics", authMiddleware, analyticsRoutes);
 
-app.get("/", (req, res) => res.send("Finance Tracker API"));
+app.get("/*", (req, res) => res.send("Finance Tracker API"));
 
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")))
