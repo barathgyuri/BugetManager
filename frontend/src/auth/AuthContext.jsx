@@ -69,6 +69,7 @@ export function AuthProvider({ children }) {
         setUser(data.user);
       }
       console.log("2")
+      console.log(data)
       return data;
     } catch (err) {
       // rethrow so calling components can handle the error
