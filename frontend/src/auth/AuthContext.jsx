@@ -70,6 +70,9 @@ export function AuthProvider({ children }) {
       }
       console.log("2")
       console.log(data)
+      console.log(data.token)
+      console.log(data.user)
+      console.log("2")
       return data;
     } catch (err) {
       // rethrow so calling components can handle the error
