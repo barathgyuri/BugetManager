@@ -16,11 +16,6 @@ app.use(express.json());
 
 const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")))
-
-app.get("*", (req,res) => {
-    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
-})
 
 // Mongoose configuration
 // Starting with Mongoose 6+, the default parser and topology options are used and
@@ -92,6 +87,13 @@ app.use("/api/incomes",  authMiddleware, incomeRoutes);
 app.use("/api/analytics", authMiddleware, analyticsRoutes);
 
 app.get("/", (req, res) => res.send("Finance Tracker API"));
+
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")))
+
+app.get("/", (req,res) => {
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
+})
 
 // Start the server only after a successful MongoDB connection
 startServer();
