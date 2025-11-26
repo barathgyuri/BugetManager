@@ -16,7 +16,7 @@ app.use(express.json());
 const __dirname = path.resolve();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://bugetmanager.onrender.com'],
+  origin: ['http://localhost:5173', 'https://bugetmanager.onrender.com', 'https://bugetmanager.onrender.com/api/auth/login','https://bugetmanager-frontend.onrender.com'],
   credentials: true
 }));
 

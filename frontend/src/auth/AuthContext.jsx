@@ -16,7 +16,10 @@ export function AuthProvider({ children }) {
     // dev server proxy (so `/api` works in development).
     if (import.meta?.env?.VITE_API_URL) {
       axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+    }else{
+      axios.defaults.baseURL = "https://bugetmanager.onrender.com";
     }
+    console.log("Axios base url:")
     console.log(axios.defaults.baseURL)
 
     // Add a request interceptor to always include the current token from localStorage
