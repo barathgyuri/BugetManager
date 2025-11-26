@@ -112,7 +112,7 @@ export default function Dashboard() {
             <div>
               <h2 className="text-lg font-semibold">Current Balance</h2>
               <p className={`text-3xl font-extrabold ${balance >= 0 ? "text-green-600" : "text-red-500"}`}>
-                ${balance.toFixed(2)}
+                HUF{balance.toFixed(2)}
               </p>
             </div>
             <div className="flex gap-3">
@@ -152,7 +152,7 @@ export default function Dashboard() {
                     {expenses.map((e) => (
                       <tr key={e._id} className="hover:bg-gray-50">
                         <td className="py-2">{new Date(e.date).toLocaleDateString()}</td>
-                        <td className="py-2 text-red-600">-${e.amount.toFixed(2)}</td>
+                        <td className="py-2 text-red-600">-HUF{e.amount.toFixed(2)}</td>
                         <td className="py-2">{e.category}</td>
                         <td className="py-2">{e.description}</td>
                         <td className="py-2">{e.importance}</td>
@@ -190,7 +190,7 @@ export default function Dashboard() {
                     {incomes.map((i) => (
                       <tr key={i._id} className="hover:bg-gray-50">
                         <td className="py-2">{new Date(i.date).toLocaleDateString()}</td>
-                        <td className="py-2 text-green-600">+${i.amount.toFixed(2)}</td>
+                        <td className="py-2 text-green-600">+HUF{i.amount.toFixed(2)}</td>
                         <td className="py-2">{i.category}</td>
                         <td className="py-2">{i.description}</td>
                         <td className="py-2 text-right">
