@@ -17,6 +17,7 @@ export function AuthProvider({ children }) {
     if (import.meta?.env?.VITE_API_URL) {
       axios.defaults.baseURL = import.meta.env.VITE_API_URL;
     }
+    console.log("Axios base url:")
     console.log(axios.defaults.baseURL)
 
     // Add a request interceptor to always include the current token from localStorage
