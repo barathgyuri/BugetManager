@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root{
-	--bg-gradient-start: #0f172a; /* dark */
-	--bg-gradient-end: #1a1f35;
+	--bg-gradient-start: #08111B;
+	--bg-gradient-end: #0F1A28;
+	--primary: #81367D;
+	--secondary: #2FA6AC;
+	--accent: #3469A9;
+	--text-light: #D8E4F3;
 }
 
 html,body,#root{
@@ -14,7 +18,7 @@ body{
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
-	color: #e2e8f0;
+	color: var(--text-light);
 }
 
 .app-container{
@@ -26,5 +30,7 @@ body{
 }
 
 .card {
-	@apply bg-gray-800 rounded-2xl shadow p-6;
+	@apply rounded-2xl shadow p-6;
+	background-color: rgba(129, 54, 125, 0.1);
+	border: 1px solid rgba(129, 54, 125, 0.3);
 }

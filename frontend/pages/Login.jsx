@@ -41,14 +41,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="bg-gray-800/80 backdrop-blur-md rounded-3xl shadow-xl p-8 w-full max-w-md border border-gray-700">
-        <h1 className="text-2xl font-bold text-center text-gray-100 mb-6">
+    <div className="min-h-screen flex items-center justify-center" style={{background: 'linear-gradient(135deg, #08111B 0%, #0F1A28 100%)'}}>
+      <div className="rounded-3xl shadow-xl p-8 w-full max-w-md" style={{backgroundColor: 'rgba(8, 17, 27, 0.9)', border: '1px solid rgba(129, 54, 125, 0.3)'}}>
+        <h1 className="text-2xl font-bold text-center mb-6" style={{color: '#D8E4F3'}}>
           {isRegister ? "Create an Account" : "Welcome Back"}
         </h1>
 
         {error && (
-          <div className="bg-red-900/30 border border-red-600 text-red-200 px-4 py-2 rounded mb-4 text-sm">
+          <div className="px-4 py-2 rounded mb-4 text-sm" style={{backgroundColor: 'rgba(129, 54, 125, 0.15)', border: '1px solid rgba(129, 54, 125, 0.3)', color: '#D8E4F3'}}>
             {error}
           </div>
         )}
@@ -56,7 +56,7 @@ export default function Login() {
         <form onSubmit={handleSubmit} className="space-y-5">
           {isRegister && (
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium mb-1" style={{color: '#2FA6AC'}}>
                 Full name
               </label>
               <input
@@ -65,14 +65,15 @@ export default function Login() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none transition"
+                style={{borderColor: '#81367D', backgroundColor: 'rgba(129, 54, 125, 0.1)', color: '#D8E4F3'}}
                 placeholder="Your full name"
               />
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium mb-1" style={{color: '#2FA6AC'}}>
               Email
             </label>
             <input
@@ -81,13 +82,14 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none transition"
+              style={{borderColor: '#81367D', backgroundColor: 'rgba(129, 54, 125, 0.1)', color: '#D8E4F3'}}
               placeholder="you@example.com"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
+            <label htmlFor="password" className="block text-sm font-medium mb-1" style={{color: '#2FA6AC'}}>
               Password
             </label>
             <input
@@ -96,7 +98,8 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none transition"
+              style={{borderColor: '#81367D', backgroundColor: 'rgba(129, 54, 125, 0.1)', color: '#D8E4F3'}}
               placeholder="••••••••"
             />
           </div>
@@ -104,11 +107,8 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded-lg text-white font-medium transition ${
-              loading
-                ? "bg-blue-700 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700 shadow-md"
-            }`}
+            className="w-full py-2 rounded-lg font-semibold transition opacity-100 hover:opacity-90 disabled:opacity-50"
+            style={{backgroundColor: '#3469A9', color: '#D8E4F3'}}
           >
             {loading ? "Please wait..." : isRegister ? "Sign Up" : "Login"}
           </button>

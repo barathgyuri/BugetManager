@@ -30,16 +30,16 @@ export default function AnalyticsPanel() {
 
   return (
     <div className="card mt-3">
-      <h3 className="text-lg font-semibold mb-3 text-gray-100">Analytics</h3>
+      <h3 className="text-lg font-semibold mb-3" style={{color: '#D8E4F3'}}>Analytics</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex flex-col items-center">
-          <p className="text-sm text-gray-400 mb-2">Expenses by Category</p>
+          <p className="text-sm mb-2" style={{color: '#2FA6AC'}}>Expenses by Category</p>
           <div className="w-full max-w-xs">
             <CategoryPie data={expByCat} dataKey="total" nameKey="_id" />
           </div>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-sm text-gray-400 mb-2">Incomes by Category</p>
+          <p className="text-sm mb-2" style={{color: '#2FA6AC'}}>Incomes by Category</p>
           <div className="w-full max-w-xs">
             <CategoryPie data={incByCat} dataKey="total" nameKey="_id" />
           </div>
@@ -47,24 +47,24 @@ export default function AnalyticsPanel() {
       </div>
 
       <div className="mt-6">
-        <p className="text-sm text-gray-400 mb-2">Monthly Trends</p>
+        <p className="text-sm mb-2" style={{color: '#2FA6AC'}}>Monthly Trends</p>
         <div className="w-full">
           <MonthlyTrends data={monthly} />
         </div>
       </div>
 
       <div className="flex gap-4 mt-4">
-        <div className="p-3 bg-gray-700 rounded flex-1 text-center">
-          <p className="text-xs text-gray-400">Total Income</p>
-          <p className="font-semibold text-gray-100">${Number(summary.totalIncome || 0).toFixed(2)}</p>
+        <div className="p-3 rounded flex-1 text-center" style={{backgroundColor: 'rgba(47, 166, 172, 0.1)'}}>
+          <p className="text-xs" style={{color: '#2FA6AC'}}>Total Income</p>
+          <p className="font-semibold" style={{color: '#D8E4F3'}}>${Number(summary.totalIncome || 0).toFixed(2)}</p>
         </div>
-        <div className="p-3 bg-gray-700 rounded flex-1 text-center">
-          <p className="text-xs text-gray-400">Total Expense</p>
-          <p className="font-semibold text-gray-100">${Number(summary.totalExpense || 0).toFixed(2)}</p>
+        <div className="p-3 rounded flex-1 text-center" style={{backgroundColor: 'rgba(129, 54, 125, 0.1)'}}>
+          <p className="text-xs" style={{color: '#81367D'}}>Total Expense</p>
+          <p className="font-semibold" style={{color: '#D8E4F3'}}>${Number(summary.totalExpense || 0).toFixed(2)}</p>
         </div>
-        <div className="p-3 bg-gray-700 rounded flex-1 text-center">
-          <p className="text-xs text-gray-400">Balance</p>
-          <p className="font-semibold text-gray-100">${Number(summary.balance || 0).toFixed(2)}</p>
+        <div className="p-3 rounded flex-1 text-center" style={{backgroundColor: 'rgba(52, 105, 169, 0.1)'}}>
+          <p className="text-xs" style={{color: '#3469A9'}}>Balance</p>
+          <p className="font-semibold" style={{color: '#D8E4F3'}}>${Number(summary.balance || 0).toFixed(2)}</p>
         </div>
       </div>
     </div>
