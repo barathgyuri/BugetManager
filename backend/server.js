@@ -16,6 +16,12 @@ app.use(express.json());
 
 const __dirname = path.resolve();
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://bugetmanager.onrender.com'],
+  credentials: true
+}));
 
 // Mongoose configuration
 // Starting with Mongoose 6+, the default parser and topology options are used and
