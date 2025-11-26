@@ -21,15 +21,17 @@ export default function Register() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-12 p-6 bg-white rounded-2xl shadow">
-      <h2 className="text-2xl font-semibold mb-4">Register</h2>
-      {err && <p className="text-red-500 mb-2">{err}</p>}
-      <form onSubmit={submit} className="space-y-3">
-        <input name="name" value={form.name} onChange={handle} placeholder="Full name" className="w-full border rounded p-2" />
-        <input name="email" type="email" value={form.email} onChange={handle} placeholder="Email" className="w-full border rounded p-2" required />
-        <input name="password" type="password" value={form.password} onChange={handle} placeholder="Password" className="w-full border rounded p-2" required />
-        <button className="w-full bg-green-600 text-white py-2 rounded">Register</button>
-      </form>
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="max-w-md w-full p-6 bg-gray-800 rounded-2xl shadow border border-gray-700">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-100">Register</h2>
+        {err && <p className="text-red-400 mb-2">{err}</p>}
+        <form onSubmit={submit} className="space-y-3">
+          <input name="name" value={form.name} onChange={handle} placeholder="Full name" className="w-full border border-gray-600 rounded p-2 bg-gray-700 text-gray-100" />
+          <input name="email" type="email" value={form.email} onChange={handle} placeholder="Email" className="w-full border border-gray-600 rounded p-2 bg-gray-700 text-gray-100" required />
+          <input name="password" type="password" value={form.password} onChange={handle} placeholder="Password" className="w-full border border-gray-600 rounded p-2 bg-gray-700 text-gray-100" required />
+          <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded">Register</button>
+        </form>
+      </div>
     </div>
   );
 }

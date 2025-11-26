@@ -41,14 +41,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 via-white to-blue-100">
-      <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-8 w-full max-w-md border border-gray-200">
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="bg-gray-800/80 backdrop-blur-md rounded-3xl shadow-xl p-8 w-full max-w-md border border-gray-700">
+        <h1 className="text-2xl font-bold text-center text-gray-100 mb-6">
           {isRegister ? "Create an Account" : "Welcome Back"}
         </h1>
 
         {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4 text-sm">
+          <div className="bg-red-900/30 border border-red-600 text-red-200 px-4 py-2 rounded mb-4 text-sm">
             {error}
           </div>
         )}
@@ -56,7 +56,7 @@ export default function Login() {
         <form onSubmit={handleSubmit} className="space-y-5">
           {isRegister && (
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-600 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                 Full name
               </label>
               <input
@@ -65,14 +65,14 @@ export default function Login() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+                className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                 placeholder="Your full name"
               />
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
               Email
             </label>
             <input
@@ -81,13 +81,13 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+              className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
               placeholder="you@example.com"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-600 mb-1">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
               Password
             </label>
             <input
@@ -96,7 +96,7 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+              className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
               placeholder="••••••••"
             />
           </div>
@@ -106,7 +106,7 @@ export default function Login() {
             disabled={loading}
             className={`w-full py-2 rounded-lg text-white font-medium transition ${
               loading
-                ? "bg-blue-400 cursor-not-allowed"
+                ? "bg-blue-700 cursor-not-allowed"
                 : "bg-blue-600 hover:bg-blue-700 shadow-md"
             }`}
           >
@@ -114,13 +114,13 @@ export default function Login() {
           </button>
         </form>
 
-        <div className="mt-6 text-center text-sm text-gray-600">
+        <div className="mt-6 text-center text-sm text-gray-400">
           {isRegister ? (
             <>
               Already have an account?{" "}
               <button
                 onClick={() => setIsRegister(false)}
-                className="text-blue-600 font-medium hover:underline"
+                className="text-blue-400 font-medium hover:text-blue-300"
               >
                 Log in
               </button>
@@ -130,7 +130,7 @@ export default function Login() {
               Don’t have an account?{" "}
               <button
                 onClick={() => setIsRegister(true)}
-                className="text-blue-600 font-medium hover:underline"
+                className="text-blue-400 font-medium hover:text-blue-300"
               >
                 Sign up
               </button>
