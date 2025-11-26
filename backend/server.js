@@ -1,4 +1,6 @@
 import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import expenseRoutes from "./routes/expenses.js";
@@ -12,8 +14,6 @@ const app = express();
 app.use(express.json());
 
 const __dirname = path.resolve();
-
-const cors = require('cors');
 
 app.use(cors({
   origin: ['http://localhost:5173', 'https://bugetmanager.onrender.com'],
