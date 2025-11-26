@@ -17,11 +17,14 @@ export function AuthProvider({ children }) {
     if (import.meta?.env?.VITE_API_URL) {
       axios.defaults.baseURL = import.meta.env.VITE_API_URL;
     }
+    console.log(axios.defaults.baseURL)
 
     // Add a request interceptor to always include the current token from localStorage
     axios.interceptors.request.use(
       (config) => {
         const token = localStorage.getItem("ft_token");
+        console.log("Get local token")
+        console.log(token)
         if (token) {
           config.headers.Authorization = `Bearer ${token}`;
         }
